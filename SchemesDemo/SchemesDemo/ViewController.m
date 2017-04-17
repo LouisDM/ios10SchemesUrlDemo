@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //ios10 之后 无法跳转设置中的各个界面，只能跳转
+    //ios10 之后 无法跳转设置中的各个界面，只能跳转setting 另外 App-Prefs: 部分可以
+    
+    //[[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"App-Prefs:root=Phone"]];
 //    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
     //以下方法是私有方法，想上架可能需要加混淆 另外，app需要添加一个Prefs的URL Schemes，即添加到info.plist的LSApplicationQueriesSchemes项中。
     NSURL*url=[NSURL URLWithString:@"Prefs:root=LOCATION_SERVICES"];
